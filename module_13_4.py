@@ -13,6 +13,10 @@ class UserState(StatesGroup):
     weight = State()
     gender = State()
 
+@dp.message_handler(commands = ["start"])
+async def start(message):
+    await message.answer("Привет")
+
 @dp.message_handler(text = "Calories")
 async def set_age(message):
     await message.answer("Введите свой возраст:")
